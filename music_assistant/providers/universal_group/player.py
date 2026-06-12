@@ -182,9 +182,6 @@ class UniversalGroupPlayer(Player):
         values: dict[str, ConfigValueType] | None = None,
     ) -> list[ConfigEntry]:
         """Return all (provider/player specific) Config Entries for the given player (if any)."""
-        self.logger.warning(
-          "UGP entries include: group_members,dynamic_members,disable_chunked,http_profile"
-        )
         return [
             # add universal group specific entries
             CONFIG_ENTRY_UGP_NOTE,
@@ -593,7 +590,7 @@ class UniversalGroupPlayer(Player):
             # they see a Content-Length header up front
             resp.content_length = 4294967296
         elif http_profile == "chunked":
-            pass
+            resp.enable_chunked_encoding()
         await resp.prepare(request)
 
         # return early if this is not a GET request
