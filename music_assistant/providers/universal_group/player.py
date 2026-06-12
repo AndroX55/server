@@ -585,7 +585,7 @@ class UniversalGroupPlayer(Player):
             # they see a Content-Length header up front
             resp.content_length = 4294967296
         elif http_profile == "chunked":
-            resp.enable_chunked_encoding()
+            pass
         await resp.prepare(request)
 
         # return early if this is not a GET request
