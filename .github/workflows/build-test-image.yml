@@ -33,4 +33,4 @@ jobs:
           file: Dockerfile
           platforms: linux/amd64
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/server:ugp-http10-test
+          tags: ghcr.io/$androx55/server:ugp-http10-test
