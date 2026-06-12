@@ -30,6 +30,11 @@ jobs:
         run: |
           ls -lah dist/
 
+      - name: Rename wheel
+        run: |
+          cp dist/music_assistant-0.0.0-py3-none-any.whl \
+             dist/music_assistant-2.9.0-py3-none-any.whl
+
       - name: Login to GHCR
         uses: docker/login-action@v4
         with:
