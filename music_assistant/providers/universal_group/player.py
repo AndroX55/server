@@ -211,12 +211,11 @@ class UniversalGroupPlayer(Player):
                 required=False,
             ),
             CONF_ENTRY_UGP_OUTPUT_FORMAT,
-            ConfigEntry(
-              key="test_123",
-              type=ConfigEntryType.STRING,
-              label="TEST FIELD",
-              default_value="hello",
-              required=False,
+            ConfigEntry.from_dict(
+              {
+                 **CONF_ENTRY_HTTP_PROFILE_DEFAULT_1.to_dict(),
+                 "advanced": False,
+              }
             ),
         ]
 
