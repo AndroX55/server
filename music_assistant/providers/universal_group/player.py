@@ -211,7 +211,13 @@ class UniversalGroupPlayer(Player):
                 required=False,
             ),
             CONF_ENTRY_UGP_OUTPUT_FORMAT,
-            CONF_ENTRY_HTTP_PROFILE_DEFAULT_1,
+            ConfigEntry(
+              key="test_123",
+              type=ConfigEntryType.STRING,
+              label="TEST FIELD",
+              default_value="hello",
+              required=False,
+            ),
         ]
 
     async def stop(self) -> None:
