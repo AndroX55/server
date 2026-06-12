@@ -182,7 +182,9 @@ class UniversalGroupPlayer(Player):
         values: dict[str, ConfigValueType] | None = None,
     ) -> list[ConfigEntry]:
         """Return all (provider/player specific) Config Entries for the given player (if any)."""
-        self.logger.warning("UGP get_config_entries called")
+        self.logger.warning(
+          "UGP entries include: group_members,dynamic_members,disable_chunked,http_profile"
+        )
         return [
             # add universal group specific entries
             CONFIG_ENTRY_UGP_NOTE,
